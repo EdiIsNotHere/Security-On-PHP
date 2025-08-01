@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'config.php'; // Make sure your config.php connects to the DB using PDO
+require 'config.php';
 
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -34,10 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login | MySite</title>
+    <title>Login | User System</title>
     <style>
         body {
-            background: #f2f2f2;
+            background: #e9ecef;
             font-family: Arial, sans-serif;
         }
 
@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <div class="login-box">
-    <h2>Login to Your Account</h2>
+    <h2>Login</h2>
 
     <?php if (!empty($error)): ?>
         <div class="error"><?= htmlspecialchars($error) ?></div>
@@ -109,10 +109,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <form method="POST" action="">
         <label for="identifier">Email or Username</label>
-        <input type="text" id="identifier" name="identifier" placeholder="Enter your email or username" required>
+        <input type="text" id="identifier" name="identifier" placeholder="Enter email or username" required>
 
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
 
         <button class="btn" type="submit">Login</button>
     </form>
